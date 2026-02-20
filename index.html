@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Recon Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web-based TCP Port Scanner built for cybersecurity learning.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>⚡ Cyber Recon Dashboard</h1>
+        <p class="typing-text"></p>
+        <p class="hero-sub">
+            A web-based TCP reconnaissance tool built using Python sockets.
+        </p>
+    </section>
+
+    <!-- FEATURE STATS -->
+    <section class="stats">
+        <div class="card">
+            <h2>⚡ Fast Scan</h2>
+            <p>Multi-threaded TCP scanning engine for faster execution.</p>
+        </div>
+
+        <div class="card">
+            <h2>🌐 Network Ready</h2>
+            <p>Scan LAN devices, remote IPs, or domains responsibly.</p>
+        </div>
+
+        <div class="card">
+            <h2>🧠 Built From Scratch</h2>
+            <p>Implemented using Python socket programming — no external scanner tools.</p>
+        </div>
+    </section>
+
+    <!-- SCAN BOX -->
+    <section class="scan-box">
+        <h2>Start Recon Operation</h2>
+
+        <div class="scan-mode">
+            <label>Scan Mode:</label>
+            <select id="scan_mode">
+                <option value="custom">Custom Range</option>
+                <option value="quick">Quick Scan (1–1024)</option>
+                <option value="full">Full Scan (1–65535)</option>
+            </select>
+        </div>
+
+        <input type="text" id="target" placeholder="Target IP or Domain (e.g. 192.168.1.1)">
+        <input type="number" id="start_port" placeholder="Start Port">
+        <input type="number" id="end_port" placeholder="End Port">
+
+        <button onclick="startScan()">🚀 Initiate Scan</button>
+
+        <div id="loader" class="loader hidden"></div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container hidden" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="results" class="terminal">
+            <p>Waiting for target input...</p>
+        </div>
+    </section>
+
+    <!-- TECHNICAL DETAILS -->
+    <section class="about">
+        <h2>How It Works</h2>
+        <ul>
+            <li>✔ Establishes TCP socket connection</li>
+            <li>✔ Attempts handshake with target ports</li>
+            <li>✔ Uses timeout-based detection</li>
+            <li>✔ Supports multi-threaded scanning</li>
+        </ul>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="disclaimer">
+        <p>
+            ⚠ This tool is developed for educational and ethical cybersecurity testing only.
+            Unauthorized scanning of networks without permission is prohibited.
+        </p>
+    </section>
+
+    <footer>
+        Built ⚡ by Bhumika | Cybersecurity Portfolio Project
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

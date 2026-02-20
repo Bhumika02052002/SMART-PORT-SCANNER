@@ -1,0 +1,268 @@
+/* ================================
+   GLOBAL RESET
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0f1c;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* ================================
+   LAYOUT
+================================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* ================================
+   HERO SECTION
+================================= */
+.hero {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.typing-text {
+    font-size: 18px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.hero-sub {
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+/* ================================
+   STATS CARDS
+================================= */
+.stats {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 18px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 25px rgba(56,189,248,0.3);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+/* ================================
+   SCAN BOX
+================================= */
+.scan-box {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 70px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.scan-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Scan Mode Dropdown */
+.scan-mode {
+    margin-bottom: 15px;
+}
+
+.scan-mode label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.scan-mode select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Inputs */
+.scan-box input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+}
+
+/* Button */
+.scan-box button {
+    width: 100%;
+    padding: 14px;
+    background: #0ea5e9;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(14,165,233,0.4);
+}
+
+.scan-box button:hover {
+    background: #38bdf8;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   LOADER
+================================= */
+.loader {
+    margin: 20px auto;
+    border: 4px solid #1e293b;
+    border-top: 4px solid #38bdf8;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================================
+   PROGRESS BAR
+================================= */
+.progress-container {
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+/* ================================
+   TERMINAL
+================================= */
+.terminal {
+    margin-top: 25px;
+    background: #000;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: monospace;
+    min-height: 150px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+.terminal-text {
+    color: #22c55e;
+    margin-bottom: 5px;
+}
+
+/* ================================
+   ABOUT SECTION
+================================= */
+.about {
+    margin-bottom: 60px;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+}
+
+.about ul {
+    padding-left: 20px;
+}
+
+.about li {
+    margin-bottom: 8px;
+}
+
+/* ================================
+   DISCLAIMER
+================================= */
+.disclaimer {
+    margin-bottom: 60px;
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.05);
+    border-left: 4px solid #ef4444;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* ================================
+   FOOTER
+================================= */
+footer {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* ================================
+   RESPONSIVE
+================================= */
+@media(max-width: 768px) {
+    .stats {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .scan-box {
+        padding: 25px;
+    }
+}
